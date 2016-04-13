@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="11/16/2015"
+	ms.date="02/14/2016"
 	ms.author="tamram"/>
 
 
@@ -102,8 +102,8 @@ Name|SAS portion|Description
 ---|---|---
 Blob URI|https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt |The address of the blob. Note that using HTTPS is highly recommended.
 Storage services version|sv=2015-04-05|For storage services version 2012-02-12 and later, this parameter indicates the version to use.
-Start time|st=2015-04-29T22%3A18%3A26Z|Specified in an ISO 8601 format. If you want the SAS to be valid immediately, omit the start time.
-Expiry time|se=2015-04-30T02%3A23%3A26Z|Specified in an ISO 8601 format.
+Start time|st=2015-04-29T22%3A18%3A26Z|Specified in UTC time. If you want the SAS to be valid immediately, omit the start time.
+Expiry time|se=2015-04-30T02%3A23%3A26Z|Specified in UTC time.
 Resource|sr=b|The resource is a blob.
 Permissions|sp=rw|The permissions granted by the SAS include Read (r) and Write (w).
 IP range|sip=168.1.5.60-168.1.5.70|The range of IP addresses from which a request will be accepted.
@@ -311,8 +311,8 @@ Shared access signatures are useful for providing limited permissions to your st
 ## Next Steps ##
 
 - [Shared Access Signatures, Part 2: Create and use a SAS with Blob storage](storage-dotnet-shared-access-signature-part-2.md)
-- [How to use Azure File storage with Windows](storage-dotnet-how-to-use-files.md)
-- [Manage Access to Azure Storage Resources](storage-manage-access-to-resources.md)
+- [Get Started with Azure File storage on Windows](storage-dotnet-how-to-use-files.md)
+- [Manage anonymous read access to containers and blobs](storage-manage-access-to-resources.md)
 - [Delegating Access with a Shared Access Signature](http://msdn.microsoft.com/library/azure/ee395415.aspx)
 - [Introducing Table and Queue SAS](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)
 [sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png

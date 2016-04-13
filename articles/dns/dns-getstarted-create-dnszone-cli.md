@@ -13,11 +13,10 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/10/2015"
+   ms.date="02/09/2016"
    ms.author="joaoma"/>
 
 # Get started with Azure DNS using CLI
-
 
 
 > [AZURE.SELECTOR]
@@ -41,7 +40,7 @@ Install Azure CLI. You can install Azure CLI for Windows, Linux, or MAC. The fol
 
 
 >[AZURE.IMPORTANT] The DNS commands require Azure CLI version 0.9.8 or above. Type `azure -v`to check which Azure CLI version is currently installed in your machine.
- 
+
 ### Step 2
 
 Azure DNS uses Azure Resource Manager. Make sure you switch CLI to use arm commands and DNS.
@@ -79,7 +78,7 @@ The Azure DNS service is managed by the Microsoft.Network resource provider. You
 
 ## Tags
 
-Tags are different from Etags. Tags are a list of name-value pairs, and are used by Azure Resource Manager to label resources for billing or grouping purposes. For more information about tags, see [Using tags to organize your Azure resources](resource-group-using-tags.md). Azure DNS CLI supports tags on both zones and record sets specified by using the options ‘-Tag’ parameter. The following example shows how to create a DNS zone with two tags, ‘project = demo’ and ‘env = test’:
+Tags are different from Etags. Tags are a list of name-value pairs, and are used by Azure Resource Manager to label resources for billing or grouping purposes. For more information about tags, see [Using tags to organize your Azure resources](../resource-group-using-tags.md). Azure DNS CLI supports tags on both zones and record sets specified by using the options ‘-Tag’ parameter. The following example shows how to create a DNS zone with two tags, ‘project = demo’ and ‘env = test’:
 
 	Azure network dns zone create -n contoso.com -g myresourcegroup -t "project=demo";"env=test"
 
@@ -104,7 +103,7 @@ To view these records, use "azure network dns-record-set show":
 
 
 In the example below, running the command with resource group "myresourcegroup", record set name "@" (for a root record) and type "SOA" will yield the following output:
- 
+
 
 	azure network dns record-set show myresourcegroup "contoso.com" "@" SOA
 	info:    Executing command network dns-record-set show
@@ -172,9 +171,8 @@ The following example uses DIG to query the domain contoso.com using the name se
 
 ## Next Steps
 
-
-[Get started creating record sets and records](dns-getstarted-create-recordset-cli.md)<BR>
-[How to manage DNS zones](dns-operations-dnszones-cli.md)<BR>
-[How to manage DNS records](dns-operations-recordsets-cli.md)<BR>
-[Automate Azure operations with .NET SDK](dns-sdk.md)<BR>
-[Azure DNS REST API Reference](https://msdn.microsoft.com/library/azure/mt163862.aspx)
+After create a DNS zone, you need to create [record sets and records](dns-getstarted-create-recordset-cli.md) to start resolving names for your Internet domain.<BR>
+You can also learn [how to manage DNS zones](dns-operations-dnszones-cli.md) and its DNS zone operations.<BR>
+Learn [how to manage DNS records](dns-operations-recordsets-cli.md) and
+[automate Azure operations with .NET SDK](dns-sdk.md)<BR>
+[Azure DNS REST API Reference.](https://msdn.microsoft.com/library/azure/mt163862.aspx)

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="02/09/2016"
+	ms.date="04/11/2016"
 	ms.author="adrianhall"/>
 
 # <a name="article-top"></a>Migrate your existing Azure Mobile Service to Azure App Service
@@ -240,7 +240,7 @@ Note: **MS_AadTenants** is stored as a comma-separated list of tenant domains (t
 >
 > Azure App Service provides a separate "no-code" Authentication and Authorization system under the _Authentication / Authorization_
 > Settings menu and the (deprecated)  _Mobile Authentication_ option under the Settings menu.  These options are incompatible with a migrated Azure
-> Mobile Service.  You can [upgrade your site] to take advantage of the Azure App Service authentication.
+> Mobile Service.  You can [upgrade your site](app-service-mobile-net-upgrading-from-mobile-services.md) to take advantage of the Azure App Service authentication.
 
 ### <a name="easytables"></a>Data
 
@@ -384,6 +384,14 @@ To view the logs:
 
 Logs will stream into the window provided as they are generated.  You can also download the logs for later analysis using your deployment credentials.  See
 the [Logging] documentation for more information.
+
+## <a name="known-issues"></a>Known Issues
+
+### Deleting a Migrated Mobile App Clone will cause a site outage
+
+If you clone your migrated mobile service using Azure PowerShell then delete the clone, the DNS entry for your production service will be removed.  As a result of this, your site will no longer be accessible from the Internet.  
+
+Resolution:  We are working on this issue.  If you wish to clone your site, please do so through the portal.
 
 ## <a name="next-steps"></a>Next Steps
 
